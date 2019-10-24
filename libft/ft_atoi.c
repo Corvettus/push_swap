@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tlynesse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 08:31:14 by tlynesse          #+#    #+#             */
-/*   Updated: 2018/12/09 16:59:00 by tlynesse         ###   ########.fr       */
+/*   Updated: 2019/10/24 15:12:08 by tlynesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,7 @@ int			ft_atoi(const char *str)
 	long		tmp;
 
 	res = 0;
-	while (*str == ' ' || *str == '\t' || *str == '\v' ||
-			*str == '\n' || *str == '\f' || *str == '\r')
+	while (ft_isspace(*str))
 		str++;
 	fl = ft_sign(&str);
 	while (*str >= '0' && *str <= '9')

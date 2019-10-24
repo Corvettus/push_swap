@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:43:43 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 14:42:15 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int		free_ret(char **line)
@@ -53,4 +65,11 @@ int		free_new(char **orig, int i)
 	}
 	free(new);
 	return (1);
+}
+
+int		ft_free_end(char **line)
+{
+	ft_putendl("Error");
+	free(*line);
+	return (0);
 }

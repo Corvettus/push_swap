@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:43:59 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 14:36:48 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int		count_out(t_stack *stack, int i)
+static int	count_out(t_stack *stack, int i)
 {
 	int	k;
 	int	len_out;
@@ -18,7 +30,7 @@ static int		count_out(t_stack *stack, int i)
 	return (len_out);
 }
 
-static int		count_in(t_stack *stack_from, t_stack *stack_into, int i)
+static int	count_in(t_stack *stack_from, t_stack *stack_into, int i)
 {
 	int	fl;
 	int	k;
@@ -45,7 +57,7 @@ static int		count_in(t_stack *stack_from, t_stack *stack_into, int i)
 	return (len_in);
 }
 
-static int		count_concrete(t_stack *s1, t_stack *s2, int i)
+static int	count_concrete(t_stack *s1, t_stack *s2, int i)
 {
 	int	len_out;
 	int	len_in;
@@ -67,27 +79,7 @@ static int		count_concrete(t_stack *s1, t_stack *s2, int i)
 	return (full_len);
 }
 
-void	push_concrete(t_stack *s1, t_stack *s2, int i)
-{
-	int k;
-
-	k = 0;
-	if (i <= s1->size / 2)
-	{
-		while (k++ < i)
-			ft_rra(s1, 1);
-	}
-	else
-	{
-		while (k++ < s1->size - i)
-		{
-			ft_ra(s1, 1);
-		}
-	}
-	ft_pb(s1, s2, 1);
-}
-
-void	push_final(t_stack *s1, t_stack *s2, int i)
+void		push_final(t_stack *s1, t_stack *s2, int i)
 {
 	int	len_out;
 	int	len_in;
@@ -104,7 +96,7 @@ void	push_final(t_stack *s1, t_stack *s2, int i)
 	ft_pa(s1, s2, 1);
 }
 
-void	push_back(t_stack *s2, t_stack *s1)
+void		push_back(t_stack *s2, t_stack *s1)
 {
 	int	i;
 	int	min;
@@ -127,44 +119,4 @@ void	push_back(t_stack *s2, t_stack *s1)
 		}
 		push_final(s2, s1, position);
 	}
-}
-
-void	sort_final(t_stack *s1, t_duo duo)
-{
-	int i;
-	int position;
-
-	i = 0;
-	while (i < s1->size)
-	{
-		if (s1->data[i] == duo.max)
-			position = i;
-		i++;
-	}
-	if (position <= s1->size / 2)
-		while (s1->data[0] != duo.max)
-			ft_rra(s1, 1);
-	else
-		while (s1->data[0] != duo.max)
-			ft_ra(s1, 1);
-}
-
-int	ft_check_sort(t_stack s)
-{
-	int	i;
-	int	fl;
-
-	i = 0;
-	fl = 0;
-	while (i < s.size - 1)
-	{
-		if (s.data[i] > s.data[i + 1])
-			i++;
-		else
-		{
-			fl = 1;
-			i++;
-		}
-	}
-	return (fl);
 }

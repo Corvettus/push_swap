@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_push_pop.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:43:56 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 14:42:26 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_init(t_stack *s1, t_stack *s2)
@@ -42,9 +54,4 @@ int		ft_pop_n(t_stack *s, int n)
 	while (i++ < n)
 		ft_pop(s);
 	return (s->data[s->size]);
-}
-
-int		ft_peek(t_stack *s)
-{
-	return (s->data[s->size - 1]);
 }

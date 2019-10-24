@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:44:55 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 15:34:18 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -10,7 +22,6 @@
 
 # include "./libft/libft.h"
 # include "get_next_line.h"
-# include "fcntl.h"
 # include <stdarg.h>
 
 int				checker(int argc, char **argv);
@@ -20,12 +31,6 @@ typedef struct	s_duo
 	int			max;
 	int			min;
 }				t_duo;
-
-typedef struct	s_return
-{
-	int			full_len;
-	int			position;
-}				t_return;
 
 typedef struct	s_stack
 {
@@ -87,55 +92,13 @@ void			push_back(t_stack *s2, t_stack *s1);
 void			push_concrete(t_stack *s1, t_stack *s2, int i);
 void			sort_final(t_stack *s1, t_duo duo);
 
-void			rotate_both(int *len_in, int *len_out, t_stack *s1, t_stack *s2);
-void			rotate_one(int *len_in, int *len_out, t_stack *s1, t_stack *s2);
-void			rotate_one_alt(int *len_in, int *len_out, t_stack *s1, t_stack *s2);
-/*
-void			push_n(t_stack *stack, int number, ...);
-void			push(t_stack *stack, int value);
-int				pop(t_stack *stack);
-int				pop_n(t_stack *stack, int n);
-int				peek(t_stack *stack);
-void			print_stack(t_stack *stack);
-int				sa(t_stack *stack, int t);
-int				sb(t_stack *stack, int t);
-int				ss(t_stack *s1, t_stack *s2, int t);
-int				pa(t_stack *stack_from, t_stack *stack_into, int t);
-int				pb(t_stack *stack_from, t_stack *stack_into, int t);
-int				ra(t_stack *stack, int t);
-int				rb(t_stack *stack, int t);
-int				rr(t_stack *s1, t_stack *s2, int t);
-int				rra(t_stack *stack, int t);
-int				rra(t_stack *stack, int t);
-int				rrb(t_stack *stack, int t);
-int				rrr(t_stack *s1, t_stack *s2, int t);
-void			push_swap(t_stack *s1, t_stack *s2);
-void			push_concrete(t_stack *s1, t_stack *s2, int i);
-int				count_concrete(t_stack *s1, t_stack *s2, int i);
-void			push_final(t_stack *s1, t_stack *s2, int i);
-int				count_out(t_stack *s1, int i);
-t_duo			find_min_max(t_stack *s1);
-void			push_3_elems(t_stack *s1, t_stack *s2, t_duo duo);
-void			push_back(t_stack *s2, t_stack *s1);
-void			push_rev(t_stack *stack, const int value);
-void			sort_3(t_stack *s1, t_duo duo);
-int				check_duplicate(t_stack stack);
-int				input_line(char **argv, t_stack **stack);
-int				input_lines(char **argv, t_stack **stack);
-int				check_commands(char *line, t_stack *s1, t_stack *s2);
-int				input(int argc, char **argv, t_stack *s1);
-void			init(t_stack *s1, t_stack *s2);
-int				check_sorted(t_stack stack);
-int				print_ko(void);
-int				free_end(char **line);
-int				ko(t_stack s1, t_stack s2);
-int				end();
 void			rotate_both(int *len_in, int *len_out,
-                    t_stack *s1, t_stack *s2);
+t_stack *s1, t_stack *s2);
 void			rotate_one(int *len_in, int *len_out,
-                    t_stack *s1, t_stack *s2);
+t_stack *s1, t_stack *s2);
 void			rotate_one_alt(int *len_in, int *len_out,
-                    t_stack *s1, t_stack *s2);
-void			sort_final(t_stack *s1, t_stack *s2, t_duo duo);
-*/
+t_stack *s1, t_stack *s2);
+
+t_duo			find_min_max(t_stack *s1);
+
 #endif

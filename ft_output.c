@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_output.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:43:53 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 14:42:31 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	ft_print_stack(t_stack *s)
@@ -23,7 +35,7 @@ void	ft_print_stack(t_stack *s)
 	ft_putendl("");
 }
 
-int	ft_ko(t_stack s1, t_stack s2)
+int		ft_ko(t_stack s1, t_stack s2)
 {
 	int	i;
 
@@ -39,21 +51,19 @@ int	ft_ko(t_stack s1, t_stack s2)
 	return (1);
 }
 
-int	ft_print_ko(void)
+int		ft_print_ko(void)
 {
 	ft_putendl("KO");
 	return (0);
 }
 
-int	ft_free_end(char **line)
+int		ft_err(void)
 {
 	ft_putendl("Error");
-	free(line);
 	return (0);
 }
 
-int	ft_err(void)
+int		ft_peek(t_stack *s)
 {
-	ft_putendl("Error");
-	return (0);
+	return (s->data[s->size - 1]);
 }

@@ -1,7 +1,18 @@
-#include "push_swap.h"
-#include "get_next_line.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:43:38 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 14:34:12 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-static int	        ft_cmd_valid(char *line)
+#include "push_swap.h"
+
+static int	ft_cmd_valid(char *line)
 {
 	if (ft_strnequ(line, "sa", 3))
 		return (1);
@@ -58,7 +69,7 @@ static int	ft_cmd_ctrl(char *line, t_stack *s1, t_stack *s2)
 	return (1);
 }
 
-int	main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	char	*line;
 	int		i;

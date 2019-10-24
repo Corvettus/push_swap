@@ -1,7 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_input.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tlynesse <tlynesse@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/22 14:43:50 by tlynesse          #+#    #+#             */
+/*   Updated: 2019/10/24 15:25:27 by tlynesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-
-int	ft_check_dup(t_stack s)
+int			ft_check_dup(t_stack s)
 {
 	int	i;
 	int	j;
@@ -21,7 +32,7 @@ int	ft_check_dup(t_stack s)
 	return (1);
 }
 
-static int		ft_line_in(char **argv, t_stack **s)
+static int	ft_line_in(char **argv, t_stack **s)
 {
 	char	**line;
 	int		i;
@@ -33,8 +44,7 @@ static int		ft_line_in(char **argv, t_stack **s)
 		if (!(ft_isnumber(line[i]) || (line[i][0] == '-'
 		&& ft_strcmp("-", line[i]) != 0)))
 			return (0);
-		if ((ft_atoi(line[i]) == -1 && ft_strcmp("-1", line[i]) != 0)
-		|| (ft_atoi(line[i]) == 0 && ft_strcmp("0", line[i]) != 0))
+		if (ft_strcmp(ft_itoa(ft_atoi(line[i])), line[i]) != 0)
 			return (0);
 		ft_push_rev(*s, ft_atoi(line[i]));
 		i++;
@@ -42,7 +52,7 @@ static int		ft_line_in(char **argv, t_stack **s)
 	return (1);
 }
 
-static int		ft_lines_in(char **argv, t_stack **s)
+static int	ft_lines_in(char **argv, t_stack **s)
 {
 	int		i;
 
@@ -58,7 +68,7 @@ static int		ft_lines_in(char **argv, t_stack **s)
 	return (1);
 }
 
-int		ft_input(int argc, char **argv, t_stack *s)
+int			ft_input(int argc, char **argv, t_stack *s)
 {
 	if (argc < 2)
 		return (-1);
